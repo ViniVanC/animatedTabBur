@@ -2,6 +2,11 @@ document.querySelectorAll(".tab-bar").forEach(function (item) {
   let children = Array.from(item.children);
   let circleIndicator = item.querySelector(".tab-bar__circle-indicator");
   let lineIndicator = item.querySelector(".tab-bar__line-indicator");
+  let gap = 25;
+
+  if (window.screen.availWidth <= 768) {
+    gap = 10;
+  }
 
   if (item.classList.contains("tab-bar-vertical")) {
     children.forEach((childItem, key) => {
@@ -12,7 +17,7 @@ document.querySelectorAll(".tab-bar").forEach(function (item) {
 
         lineIndicator.classList.remove("animate");
         lineIndicator.style.marginTop =
-          (25 + childItem.clientHeight) * key + "px";
+          (gap + childItem.clientHeight) * key + "px";
         lineIndicator.classList.add("animate");
 
         document.body.style.backgroundColor = color;
@@ -28,7 +33,7 @@ document.querySelectorAll(".tab-bar").forEach(function (item) {
 
         circleIndicator.classList.remove("animate");
         circleIndicator.style.marginLeft =
-          (25 + childItem.clientWidth) * key + "px";
+          (gap + childItem.clientWidth) * key + "px";
         circleIndicator.classList.add("animate");
 
         document.body.style.backgroundColor = color;

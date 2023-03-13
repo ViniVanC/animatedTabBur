@@ -21,6 +21,7 @@
 
 body {
   height: 100vh;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,6 +38,12 @@ body {
   position: relative;
   gap: 25px;
   box-shadow: 0 10px 40px -20px rgba(0, 0, 0, 0.568627451);
+}
+@media screen and (max-width: 768px) {
+  .tab-bar {
+    padding: 10px;
+    gap: 10px;
+  }
 }
 .tab-bar__circle-indicator {
   position: absolute;
